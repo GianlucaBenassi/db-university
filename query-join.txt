@@ -50,6 +50,15 @@ JOIN `teachers` AS d ON c.`teacher_id` = d.`id`;
 
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 
+SELECT DISTINCT
+		a.*,
+        e.*
+FROM `teachers` AS a
+JOIN `course_teacher` AS b ON a.`id` = b.`teacher_id`
+JOIN `courses` AS c ON b.`course_id` = c.`id`
+JOIN `degrees` AS d ON c.`degree_id` = d.`id`
+JOIN `departments` AS e ON d.`department_id` = e.`id`
+WHERE e.`id` = 5;
 
 ------------------------------------------------------------------------------------
 
