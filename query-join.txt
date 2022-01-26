@@ -1,5 +1,10 @@
 1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
 
+SELECT a.*,
+       b.`name` AS 'Nome_corso'
+FROM `students` AS a
+JOIN `degrees` AS b ON a.`degree_id` = b.`id`
+WHERE b.`id` = 53;
 
 ------------------------------------------------------------------------------------
 
@@ -13,12 +18,7 @@
 
 ------------------------------------------------------------------------------------
 
-4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il
-
-
-------------------------------------------------------------------------------------
-
-relativo dipartimento, in ordine alfabetico per cognome e nome
+4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 
 
 ------------------------------------------------------------------------------------
