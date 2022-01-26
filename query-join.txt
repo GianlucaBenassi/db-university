@@ -10,6 +10,10 @@ WHERE b.`id` = 53;
 
 2. Selezionare tutti i Corsi di Laurea del Dipartimento di Neuroscienze
 
+SELECT * 
+FROM `degrees` AS a
+JOIN `departments` AS B ON a.`department_id` = b.`id`
+WHERE b.`id` = 7;
 
 ------------------------------------------------------------------------------------
 
