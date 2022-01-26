@@ -19,6 +19,12 @@ WHERE b.`id` = 7;
 
 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
 
+SELECT a.*,
+	   c.*
+FROM `teachers` AS a
+JOIN `course_teacher` AS b ON a.`id` = b.`teacher_id`
+JOIN `courses` AS c ON b.`course_id` = c.`id`
+WHERE a.`id` = 44;
 
 ------------------------------------------------------------------------------------
 
