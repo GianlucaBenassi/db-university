@@ -62,7 +62,17 @@ WHERE e.`id` = 5;
 
 ------------------------------------------------------------------------------------
 
-7. BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per
+7. BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
 
+SELECT a.`name` AS 'Nome',
+	   a.`surname` AS 'Cognome',
+	   COUNT(d.`id`) AS 'Tentativi_esame',
+       d.`name` AS 'Nome_esame',
+       d.`description` AS 'Descrizione_esame'
+FROM `students` AS a
+JOIN `exam_student` AS b ON a.`id` = b.`student_id`
+JOIN `exams` AS c ON b.`exam_id` = c.`id`
+JOIN `courses` AS d ON c.`course_id` = d.`id`
+GROUP BY a.`name`, a.`surname`, d.`name`, d.`description`
 
 ------------------------------------------------------------------------------------
